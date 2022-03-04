@@ -5,7 +5,11 @@ from django.http import HttpResponse
 
 def index(request):
     template = 'posts\index.html'
-    return render(request, template)
+    text = "Это главная страница проекта Yatube"
+    context = {
+        'text': text
+    }
+    return render(request, template, context)
 
 
 def group_posts(request):
